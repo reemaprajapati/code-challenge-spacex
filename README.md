@@ -1,1 +1,0 @@
-# parpera-code-challenges
