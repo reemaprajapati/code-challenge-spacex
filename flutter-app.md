@@ -6,7 +6,6 @@ Write the app from scratch using the `flutter create` command.
 
 ## Notes
 - Emphasis will be on clean code structure and a good testing approach
-- Host your project on GitHub
 
 ## Criteria
 
@@ -33,13 +32,15 @@ Write the app from scratch using the `flutter create` command.
 
 - Appropriate test coverage
 
-- README
+## Bonus
+- Search by Rocket Name
+- Order by Launch Date
+
+## Submission
+- Host your project on GitHub
+- include a README with
     - List any necessary dependencies that aren't installed automatically
     - Install instructions
     - Test instructions
     - Instructions to run locally
     - Caveats
-
-## Bonus
-- Search by Rocket Name
-- Order by Launch Date
