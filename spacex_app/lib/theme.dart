@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:spacex_app/res/colors.dart';
 
 ThemeData appTheme() => ThemeData(
-  // Define the default Brightness and Colors
-  brightness: Brightness.light,
+      // Define the default Brightness and Colors
+      brightness: Brightness.light,
 
-  primaryColor: AppColors.primaryColor,
-  backgroundColor: AppColors.colorWhite,
-  accentColor: AppColors.primaryColor,
+      primaryColor: AppColors.primaryColor,
+      backgroundColor: AppColors.colorWhite,
+      accentColor: AppColors.primaryColor,
 
-  appBarTheme: AppBarTheme(
-      color: Colors.transparent,
-      elevation: 0,
-      iconTheme: IconThemeData(color: Colors.black, size: 5),
-      textTheme: TextTheme(bodyText1: TextStyle(color: Colors.black))),
+      appBarTheme: AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black, size: 5),
+          textTheme: TextTheme(bodyText1: TextStyle(color: Colors.black))),
 
-  textTheme: AppTheme.textTheme,
-);
+      textTheme: AppTheme.textTheme,
+    );
 
 class AppTheme {
   AppTheme._();
@@ -42,7 +42,6 @@ class AppTheme {
   static const TextStyle boldFont = TextStyle(
       fontWeight: FontWeight.w600,
       fontStyle: FontStyle.normal,
-      color: AppColors.colorBlack
-  );
-
+      color: AppColors.colorBlack,
+      fontSize: 20);
 }
