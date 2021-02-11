@@ -33,6 +33,18 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  #navigation
+  fluro: 1.7.8
+
+  #bloc library
+  bloc: ^6.1.0
+  flutter_bloc: ^6.1.0
+
+  # Dependency injection
+  get_it: ^5.0.1
+
+  # HTTP library
+  dio: ^3.0.10
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
