@@ -71,19 +71,19 @@ class LaunchListModel {
   LaunchListModel.fromJson(dynamic json) {
     _links = json["links"] != null ? Links.fromJson(json["links"]) : null;
     _rocket = json["rocket"];
-    _success = json["success"];
+    _success = json["success"] ?? false;
     if (json["failures"] != null) {
       _failures = [];
       json["failures"].forEach((v) {
         _failures.add(Failures.fromJson(v));
       });
     }
-    _details = json["details"];
+    _details = json["details"] ?? "";
 
     _launchpad = json["launchpad"];
     _name = json["name"];
     _dateUtc = json["date_utc"];
-    _upcoming = json["upcoming"];
+    _upcoming = json["upcoming"] ?? false;
     if (json["cores"] != null) {
       json["cores"].forEach((v) {});
     }
@@ -123,8 +123,8 @@ class Patch {
   }
 
   Patch.fromJson(dynamic json) {
-    _small = json["small"];
-    _large = json["large"];
+    _small = json["small"] ?? "";
+    _large = json["large"] ?? "";
   }
 
 }

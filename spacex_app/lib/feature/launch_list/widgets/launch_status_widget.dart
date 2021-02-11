@@ -4,18 +4,22 @@ import 'package:spacex_app/res/colors.dart';
 import 'package:spacex_app/res/strings.dart';
 
 class LaunchStatusWidget extends StatelessWidget {
-  final LaunchListModel launchModel;
+  final bool successStatus;
+  final bool upcomingStatus;
+  final List<Failures> failures;
 
-  const LaunchStatusWidget({Key key, this.launchModel}) : super(key: key);
+  const LaunchStatusWidget(
+      {Key key, this.successStatus, this.upcomingStatus, this.failures})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var launchType = launchModel.success
+    var launchType = successStatus
         ? UiStrings.success
-        : launchModel.upcoming
+        : successStatus
             ? UiStrings.upcoming
-            : launchModel.failures.isNotEmpty
+            : failures.isNotEmpty
                 ? UiStrings.failed
                 : "";
 
@@ -26,7 +30,7 @@ class LaunchStatusWidget extends StatelessWidget {
           Text(
             "Status: $launchType",
             style: theme.textTheme.bodyText2.copyWith(
-                color: AppColors.colorGrey.withOpacity(0.7), fontSize: 16),
+                color: AppColors.colorGrey.withOpacity(0.8), fontSize: 18),
           ),
           SizedBox(
             width: 8.0,

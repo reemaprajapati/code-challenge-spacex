@@ -9,7 +9,6 @@ class ThumbnailImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(imageUrl);
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -31,6 +30,5 @@ class ThumbnailImage extends StatelessWidget {
         errorWidget: (context, url, error) => PlaceHolderImage(),
       ),
     );
-    ;
   }
 }

@@ -6,4 +6,6 @@ class UiStrings {
   static String failed = "Failed";
   static String upcoming = "Upcoming";
   static String launchDate = "Launch Date:";
+  static String siteDetails = "Site details";
+  static String rocketDetails = "Rocket details";
 }

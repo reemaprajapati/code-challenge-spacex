@@ -42,7 +42,7 @@ dev_dependencies:
   equatable: ^1.2.6
 
   # Dependency injection
-  get_it: ^5.0.1
+  get_it: ^5.0.3
 
   # HTTP library
   dio: ^3.0.10

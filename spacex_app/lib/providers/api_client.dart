@@ -10,15 +10,15 @@ class ApiClient {
 
   ApiClient(Dio dio) {
     dio.interceptors
-        .add(InterceptorsWrapper(onError: (DioError error) => error)
-    );
+        .add(InterceptorsWrapper(onError: (DioError error) => error));
     _dio = dio;
   }
 
-  Future<T> httpGet<T>(String serviceName) async {
+  Future<T> httpGet<T>(
+      String serviceName) async {
     var responseJson;
     try {
-      final response = await _dio.get(ApiConstants.baseUrl+serviceName);
+      final response = await _dio.get(ApiConstants.baseUrl + serviceName);
       print(response);
       responseJson = _returnResponse(response);
     } on SocketException {
