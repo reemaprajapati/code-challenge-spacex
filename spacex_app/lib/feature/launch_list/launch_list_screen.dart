@@ -20,7 +20,11 @@ class _LaunchListScreenState extends State<LaunchListScreen> {
   @override
   void initState() {
     super.initState();
-    launchListBloc = locator<LaunchListBloc>();
+    // launchListBloc = locator.get<LaunchListBloc>();
+    //TODO : solve di error and use singleton instead
+    launchListBloc = LaunchListBloc(
+        launchListRepository:
+            LaunchListRepository(apiClient: ApiClient(Dio())));
   }
 
   @override

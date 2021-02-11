@@ -9,10 +9,9 @@ import 'package:spacex_app/providers/api_client.dart';
 
 final locator = GetIt.instance;
 void setUpLocator() {
-  locator.registerSingleton(
-          () => Dio());
+  locator.registerSingleton<Dio>(Dio());
   locator.registerSingleton(() => ApiClient(locator()));
-  locator.registerSingleton(() => LaunchListRepository(apiClient: locator()));
+  locator.registerLazySingleton<LaunchListRepository>(() => LaunchListRepository(apiClient: locator()));
   locator.registerLazySingleton(() => LaunchDetailRepository(apiClient: locator()));
   locator.registerLazySingleton(() => LaunchListBloc(launchListRepository: locator()));
   locator.registerLazySingleton(() => RocketDetailBloc(launchDetailRepository: locator()));

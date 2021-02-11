@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:spacex_app/config/injection/dependency_injection.dart';
 import 'package:spacex_app/data/launch_argument_model.dart';
 import 'package:spacex_app/feature/launch_detail_screen/launch_pad_bloc/launchpad_detail_bloc.dart';
-import 'package:spacex_app/feature/launch_detail_screen/repo/launch_detail_repository.dart';
 import 'package:spacex_app/feature/launch_detail_screen/rocket_detail_bloc/rocket_detail_bloc.dart';
 import 'package:spacex_app/feature/launch_detail_screen/widgets/large_image_widget.dart';
 import 'package:spacex_app/feature/launch_detail_screen/widgets/launch_pad_detail_widget.dart';
 import 'package:spacex_app/feature/launch_detail_screen/widgets/rocket_detail_widget.dart';
-import 'package:spacex_app/feature/launch_list/widgets/launch_status_widget.dart';
-import 'package:spacex_app/providers/api_client.dart';
 import 'package:spacex_app/res/colors.dart';
 import 'package:spacex_app/res/strings.dart';
 import 'package:spacex_app/utils/utilities.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spacex_app/widgets/launch_status_widget.dart';
+import 'package:spacex_app/feature/launch_detail_screen/repo/launch_detail_repository.dart';
+import 'package:spacex_app/providers/api_client.dart';
+import 'package:dio/dio.dart';
 
 class LaunchDetailScreen extends StatefulWidget {
   final LaunchArgumentsModel launchModel;
@@ -31,8 +31,14 @@ class _LaunchDetailScreenState extends State<LaunchDetailScreen> {
   @override
   void initState() {
     super.initState();
-    rocketDetailBloc = locator<RocketDetailBloc>();
-    launchpadDetailBloc = locator<LaunchpadDetailBloc>();
+
+    //TODO : solve di error and use singleton instead
+    rocketDetailBloc = RocketDetailBloc(
+        launchDetailRepository:
+            LaunchDetailRepository(apiClient: ApiClient(Dio())));
+    launchpadDetailBloc = LaunchpadDetailBloc(
+        launchDetailRepository:
+            LaunchDetailRepository(apiClient: ApiClient(Dio())));
   }
 
   @override
@@ -69,7 +75,6 @@ class _LaunchDetailScreenState extends State<LaunchDetailScreen> {
                 height: 10.0,
               ),
               Center(
-
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: Text(

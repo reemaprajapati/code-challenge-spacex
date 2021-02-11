@@ -29,6 +29,7 @@ class LaunchStatusWidget extends StatelessWidget {
         children: [
           Text(
             "Status: $launchType",
+            textDirection: TextDirection.ltr,
             style: theme.textTheme.bodyText2.copyWith(
                 color: AppColors.colorGrey.withOpacity(0.8), fontSize: 18),
           ),

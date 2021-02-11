@@ -3,11 +3,11 @@ import 'package:spacex_app/config/router/app_router.dart';
 import 'package:spacex_app/config/router/routes.dart';
 import 'package:spacex_app/data/launch_argument_model.dart';
 import 'package:spacex_app/feature/launch_list/data/launch_list_model.dart';
-import 'package:spacex_app/feature/launch_list/widgets/launch_status_widget.dart';
 import 'package:spacex_app/feature/launch_list/widgets/thumbnail_widget.dart';
 import 'package:spacex_app/res/colors.dart';
 import 'package:spacex_app/res/strings.dart';
 import 'package:spacex_app/utils/utilities.dart';
+import 'package:spacex_app/widgets/launch_status_widget.dart';
 
 class LaunchItemWidget extends StatelessWidget {
   final LaunchListModel launchModel;
